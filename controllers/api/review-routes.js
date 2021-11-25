@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Auth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 const { Review } = require('../../models');
 
 router.get('/', (req, res) => {
@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
         });
 });
 
-router.post('/', Auth, (req, res) => {
+router.post('/', withAuth, (req, res) => {
     if (req.session) {
         Review.create({
             review_text: req.body.review_text,
@@ -26,7 +26,7 @@ router.post('/', Auth, (req, res) => {
     }
 });
 
-router.delete('/:id', Auth, (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Review.destroy({
         where: { id: req.params.id }
     })
