@@ -1,0 +1,15 @@
+async function deleteFormHandler(event) {
+    event.preventDefault();
+
+    const id = window.location.toString().split('/').pop();
+
+    const response = await fetch(`/api/property/${id}`, { method: 'DELETE' });
+
+    if (response.ok) {
+        document.location.replace('/dashboard/');
+    } else {
+        alert(response.statusText);
+    }
+}
+
+document.querySelector('.delete-property-btn').addEventListener('click', deleteFormHandler);
