@@ -16,4 +16,20 @@ Review.belongsTo(User);
 
 Review.belongsTo(Property);
 
+User.belongsToMany(Property, {
+    through: {
+      model: Review,
+      foreignKey: 'property_id'
+    },
+    as: 'property_users'
+  });
+
+  Property.belongsToMany(User, {
+    through: {
+      model: Review,
+      foreignKey: 'user_id'
+    },
+    as: 'user_property'
+  });  
+
 module.exports = { User, Property, Review }; 
