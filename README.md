@@ -20,6 +20,9 @@ An application to see reviews about rental properties
  * Its done when the /review/ POST request allows the logged in user to add a review to a property. 
 
 
+## Specifications
+
+
 
 later development
 google maps address api
