@@ -2,6 +2,7 @@
 An application to see reviews about rental properties
 
 
+
 as a user
 
 I want to be able to view reviews about rental properties listed on this site
@@ -24,3 +25,4 @@ Then I am taken to their 'profile page' where I can see any properties the user 
 
 later development
 google maps address api
+
