@@ -1,6 +1,37 @@
-//view recent proeprties
+<div class="row text-center">
+    <div class="col-12 text-center">
+        <h2 id="welcome">Hi {{name}}!</h2>
+    </div>
+</div>
 
-//view recent reviews
+<div class="row">
+    <div class="row mt-4">
+        {{#if reviews.length}}
+        <div class="col-12 post-list">
+            <h3 id="recent-posts">Your Recent Reviews:</h3>
+            {{#each reviews as |review|}}
+            <div class="col-12 recent-post-card">
+                <div class="card">
+                    <div class="card-header">
+                        <h4><a href="property/{{review.property_id}}">{{review.property.address}}</a></h4>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="dashboard/edit/{{review.id}}">{{review.title}}</a> -
+                            {{review.rating}}/5</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Reviewed: {{format_date
+                            review.created_at}}</h6>
+                        <p class="card-text">{{review.description}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 text-center">
+                <button class="btn btn-sm btn-danger" id="delBtn" data-id="{{review.id}}">DELETE</button>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+</div>
 
-id
 
+<script src="/js/dashboard.js"></script>
