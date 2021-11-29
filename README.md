@@ -26,4 +26,5 @@ An application to see reviews about rental properties
 
 later development
 google maps address api
+average rating
 

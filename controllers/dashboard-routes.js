@@ -2,7 +2,7 @@ const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const { Property, User } = require('../models');
 
-router.get('/', withAuth, (req, res) => {
+router.get('/', /*withAuth,*/ (req, res) => {
     Property.findAll({
         where: { user_id: req.session.user_id },
         attributes: ['id', 'title', 'created_at']
