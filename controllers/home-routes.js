@@ -7,29 +7,24 @@ router.get('/', (req, res) => {
     Property.findAll({
         attributes: [
             'id',
-            'property_content',
-            'title',
-            'created_at'
+            'address',
         ],
         include: [
             {
-                mode: Review,
-                attributes: ['id', 'review_text', 'property_id', 'user_id', 'created_at'],
+                model: Review,
+                attributes: ['id', 'title', 'property_id', 'user_id', 'rating', 'description'],
                 include: {
                     model: User,
-                    attributes: ['username']
+                    attributes: ['name', 'id']
                 }
             },
-            {
-                model: User,
-                attributes: ['username']
-            }
         ]
     })
         .then(dbPropertyData => {
-            const property = dbPropertyData.map(Property.get({ plain: true }));
+            const properties = dbPropertyData.map((property) => 
+            property.get({ plain: true }));
             res.render('homepage', {
-                property,
+                properties,
                 loggedIn: req.session.loggedIn
             });
         })

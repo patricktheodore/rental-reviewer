@@ -12,6 +12,8 @@ Property.hasMany(Review, {
     onDelete: 'CASCADE'
 });
 
+Review.belongsTo(User);
+
 Review.belongsTo(Property);
 
 module.exports = { User, Property, Review }; 

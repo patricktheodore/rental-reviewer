@@ -1,25 +1,23 @@
 # rental-reviewer
 An application to see reviews about rental properties
 
+## User Story
+ * As a user, I want to be able to view reviews for rental properties
+ * So that I can see previous renters expreriences before I commit to a lease
 
+### Acceptance Criteria
 
-as a user
-
-I want to be able to view reviews about rental properties listed on this site
-When I view a property, I am given basic information about the property (address, bedrooms, bathrooms, car bays) images? 
-When I scroll down on the property, 
-Then i am shown any reviews about the property from previous renters. 
-When I login, I am able to add a property.
-When I click on the property I have added, 
-Then I am able to add a review to that property. 
-When I click on a review
-Then I am taken to a new screen with that review and any associated comments. 
-When I Click on a user
-Then I am taken to their 'profile page' where I can see any properties the user has reviewed and the associated review.
-
-
-
-
+ * Its done when the '/' homepage route, renders recent properties reviewed
+ * Its done when clicking on /property/:id? property checks authentication
+ * If auth fails, a login/signup page is rendered
+ * If auth passes, /property/:id renders the property and recent reviews
+ * Its done when /review/:id renders the review view
+ * its done when if a user is logged in, the login option changes to log out
+ * Its done when /user/:id renders the user view with the users recent reviews
+ * its done when the /dashboard/ renders the dashboard view
+ * The dashboard view will show the users recent reviews, and also gives option to add property
+ * Its done when the /property/ POST requests, allows the user to add a new property
+ * Its done when the /review/ POST request allows the logged in user to add a review to a property. 
 
 
 

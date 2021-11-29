@@ -1,0 +1,15 @@
+{{#each properties as |property| }}
+<div class="col-sm-12 col-md-10 post-card">
+  <div class="card">
+    <div class="card-header">
+      <a href="/user/{{property.id}}">{{property.address}}</a>
+    </div>
+    <div class="card-body">
+      <a href="/review/{{property.review.id}}">
+        <h5 class="card-title">{{property.review.title}} - </h5>
+      </a>
+      <p>{{property.review.description}}</p>
+    </div>
+  </div>
+</div>
+{{/each}}
