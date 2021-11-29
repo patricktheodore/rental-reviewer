@@ -18,7 +18,7 @@ body {
 .custom-brand {
     font-size: 2rem;
     color: var(--light);
-    letter-spacing: -0.2rem;
+    letter-spacing: -0.1rem;
 }
 
 .social-navs-container {
