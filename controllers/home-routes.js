@@ -5,10 +5,12 @@ router.get('/', (req, res) => {
     console.log(req.session);
 
     Property.findAll({
-        attributes: [
-            'id',
-            'address',
-        ],
+        attributes: ['id','address'],
+        include: [
+            {
+                model: Review
+            }
+        ]
     })
         .then(dbPropertyData => {
             const properties = dbPropertyData.map((property) => 

@@ -1,13 +1,49 @@
 :root {
     --light: #FFFFFF;
-    --primary: #ff5071;
-    --secondary: #3a456b;
+    --primary: #c5c2c2;
+    --secondary: #312e4b;
+    --dark: #222222;
 }
 
 body {
     background-color: var(--light);
-    color: var(--secondary);
+    color: var(--dark);
     width: 100vw;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 16px;
 }
+
+header,
+.property-card {
+    margin-bottom: 2rem;
+}
+
+.custom-nav {
+    background-color: var(--dark);
+}
+
+.custom-link,
+.custom-brand,
+#burger-nav {
+    color: var(--light);
+}
+
+.custom-link {
+    margin: 0 2rem;
+}
+
+.custom-link:hover,
+.custom-brand:hover {
+    color: var(--primary);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
+.custom-brand {
+    margin-left: 2rem;
+}
+
+.fa-2x {
+    color: var(--dark);
+}
+

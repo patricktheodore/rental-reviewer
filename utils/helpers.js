@@ -3,5 +3,5 @@ module.exports = {
         date = new Date(date);
         return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
     },
-    format_plural: (word, amount) => amount !== 1 ? `${word}s` : word
+    format_plural: (word, amount) => amount !== 1 ? `${word}s` : word,
 };

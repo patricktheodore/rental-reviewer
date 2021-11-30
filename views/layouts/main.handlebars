@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/c1b942df5a.js" crossorigin="anonymous"></script>
-    <title>Rental Reviews</title>
+    <title>Renters Reviews</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -17,8 +17,8 @@
 <body>
 
     <header class="sticky-top">
-        <nav class="navbar navbar-expand-lg sitcky-top navbar-dark bg-dark custom-nav">
-            <a class="navbar-brand custom-brand" href="/">Rental Reviews</a>
+        <nav class="navbar navbar-expand-lg sitcky-top custom-nav">
+            <a class="navbar-brand custom-brand" href="/">Renters Reviews</a>
             <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -27,17 +27,17 @@
             <div class="collapse navbar-collapse custom-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 gx-0 nav-links-container">
                     <li class="nav-item">
-                        <a class="nav-link custom-link" href="/">Home</a>
+                        <a class="nav-link custom-link" id="homeLink" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-link" href="/dashboard">Dashboard</a>
+                        <a class="nav-link custom-link" id="dashboardLink" href="/dashboard">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-link" href="/api/property">Properties</a>
+                        <a class="nav-link custom-link" id="propertyLink" href="/api/property">Properties</a>
                     </li>
                     <li class="nav-item">
                         {{#if logged_in}}<button class="nav-link custom-link" id="logout">Logout</button>
-                        {{else}} <a class="nav-link custom-link" id="profile" href="/login">Login</a>
+                        {{else}} <a class="nav-link custom-link" id="profile loginLink" href="/login">Login</a>
                         {{/if}}
                     </li>
                 </ul>
@@ -49,14 +49,10 @@
         {{{ body }}}
     </main>
 
-    <footer class="footer mt-auto custom-footer">
-        <div class="row container-fluid gx-0 justify-content-center">
-            <div class="row gx-0">
-                <div class="col-12 text-center gy-3">
+    <footer class="footer mt-auto py-3 custom-footer">
+        <div class="container-fluid gx-0 text-center">
                     <a class="nav-link custom-link fab fa-github fa-2x" title="github"
                         href="https://github.com/patricktheodore/rental-reviewer" target="_blank"></a>
-                </div>
-            </div>
         </div>
     </footer>
 
