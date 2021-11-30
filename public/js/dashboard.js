@@ -14,7 +14,26 @@ const delButtonHandler = async (event) => {
     }
   };
 
+  const editButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id'))  {
+      const id = event.target.getAttribute('data-id');
 
-document
+      const response = await fetch(`api/reviews/edit/${id}`, {
+        method: 'GET',
+      }); 
+
+      if (response.ok) {
+        document.location.replace(`/api/reviews/edit/${id}`)
+      } else {
+        alert('Cannot Find Review!')
+      }
+    }};
+
+
+  document
+.querySelector('#editBtn')
+.addEventListener('click', editButtonHandler);
+
+  document
 .querySelector('#delBtn')
 .addEventListener('click', delButtonHandler);

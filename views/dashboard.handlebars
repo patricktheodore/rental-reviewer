@@ -4,47 +4,44 @@
     </div>
 </div>
 
-<div class="row justify-content-center">
-  <div class="col-sm-12 col-md-10 text-center">
-    <h3>Add New Property:</h3>
-    <form class="form new-property-form">
-      <div class="form-group">
-        <label for="property-address" id="property-address-label">Address:</label>
-        <input class="form-input" type="text" id="property-address" name="property-address" />
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
+<div class="row justify-content-md-center">
+    <div class="col-sm-12 col-md-8 col-lg-6 text-center">
+        <form class="form new-property-form">
+            <h4>Add New Property:</h4>
+            <div class="form-group">
+                <input class="form-input col-12" type="text" id="property-address" name="property-address"
+                    placeholder="Address" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary col-12">Create</button>
+            </div>
+        </form>
+    </div>
 </div>
 
-<div class="row">
-    <div class="row mt-4">
-        {{#if reviews.length}}
-        <div class="col-12 post-list">
-            <h3 id="recent-posts">Your Recent Reviews:</h3>
-            {{#each reviews as |review|}}
-            <div class="col-12 recent-post-card">
-                <div class="card">
-                    <div class="card-header">
-                        <h4><a href="/api/property/{{review.property_id}}">{{review.property.address}}</a></h4>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="/api/reviews/edit/{{review.id}}">{{review.title}}</a> -
-                            {{review.rating}}/5</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Reviewed: {{format_date
-                            review.created_at}}</h6>
-                        <p class="card-text">{{review.description}}</p>
-                    </div>
+<div class="row justify-content-md-center">
+    {{#if reviews.length}}
+    <div class="col-sm-10 col-lg-8 text-center property-list">
+        <h3 id="recent-property-header">Your Recent Reviews:</h3>
+        {{#each reviews as |review|}}
+        <div class="col-12 recent-review-card">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-start"><a
+                            href="/api/property/{{review.property_id}}">{{review.property.address}}</a><span
+                            class="text-muted"> - Reviewed {{format_date
+                            review.created_at}}</span></h4>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-start">{{review.title}} - {{review.rating}}/5</h5>
+                    <p class="card-text text-muted text-start">{{review.description}}</p>
                 </div>
             </div>
-            <div class="col-12 text-center">
-                <button class="btn btn-sm btn-danger" id="delBtn" data-id="{{review.id}}">DELETE</button>
-            </div>
         </div>
-        {{/each}}
+        <button class="btn btn-sm btn-primary col-5" id="editBtn" data-id="{{review.id}}" >Edit</button>
+        <button class="btn btn-sm btn-danger col-5" id="delBtn" data-id="{{review.id}}">Delete</button>
     </div>
+    {{/each}}
     {{/if}}
 </div>
 

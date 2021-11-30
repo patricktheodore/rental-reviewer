@@ -48,14 +48,18 @@ header,
 }
 
 .form-input,
-.btn-primary {
+.btn-primary,
+#delBtn,
+#editBtn {
     padding: 0.5rem;
     border-radius: 6px;
     border: solid 1px var(--primary);
     margin-top: 0.5rem;
 }
 
-.btn-primary {
+.btn-primary,
+#delBtn,
+#editBtn {
     margin-top: 1rem;
 }
 
@@ -64,22 +68,30 @@ header,
 }
 
 .login-form,
-.signup-form {
+.signup-form,
+.new-property-form,
+.recent-review-card {
     background-color: white;
     padding: 1rem 1rem 2rem 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
 }
 
-#dont-prompt {
+#dont-prompt,
+#recent-property-header {
     margin: 4rem 0 2rem 0;
 }
 
-#propertyListHeader {
+#propertyListHeader,
+#welcome {
     margin: 1rem 0 2rem 0;
 }
 
 #githubFA {
     margin-top: 10rem;
+}
+.text-muted {
+    font-size: 1rem;
+    padding-left: 0.5rem;
 }
 
