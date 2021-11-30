@@ -1,0 +1,13 @@
+<div class="col-12 recent-post-card">
+    <div class="card">
+        <div class="card-header">
+            <h3>Reviewed by <a href="/users/{{user.id}}">{{user.name}}</a> - <span>{{format_date created_at}}</span></h3>
+            <h4><a href="/api/property/{{property_id}}">{{property.address}}</a></h4>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{title}} - {{rating}}/5</h5>
+            <p class="card-text">{{description}}</p>
+        </div>
+    </div>
+</div>
+

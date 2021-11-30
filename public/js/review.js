@@ -5,11 +5,6 @@ const newReviewHandler = async (event) => {
     const title = document.querySelector('#reviewTitle').value.trim();
     const rating = $('input[name=reviewRating]:checked').val();
     const description = document.querySelector('#reviewDescription').value.trim();
-
-    console.log(rating);
-    console.log(title);
-    console.log(description);
-    console.log(property_id);
   
     if (title && rating && description) {
       const response = await fetch(`/api/reviews`, {
