@@ -75,6 +75,10 @@ header,
     margin: 4rem 0 2rem 0;
 }
 
+#propertyListHeader {
+    margin: 1rem 0 2rem 0;
+}
+
 #githubFA {
     margin-top: 10rem;
 }
