@@ -22,19 +22,16 @@ router.get('/', async (req, res) => {
 
         const properties = propertyData.map((property) => property.get({ plain: true }));
 
-        // res.json(properties)
 
         res.render('propertiesList', {
             properties,
-            loggein_in: req.session.loggin_in
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
 });
-
-
 
 
 // Working Get by ID
@@ -76,15 +73,6 @@ router.post('/', withAuth, async (req, res) => {
         res.status(400).json(err);
     }
 });
-
-
-
-
-
-
-
-
-
 
 router.put('/:id', withAuth, (req, res) => {
     Property.update(

@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
             property.get({ plain: true }));
             res.render('homepage', {
                 properties,
-                loggedIn: req.session.loggedIn
+                logged_in: req.session.logged_in
             });
         })
         .catch(err => {
@@ -25,12 +25,14 @@ router.get('/', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         res.redirect('/');
         return;
     }
 
-    res.render('login');
+    res.render('login', {
+    logged_in: req.session.logged_in});
+
 });
 
 module.exports = router;

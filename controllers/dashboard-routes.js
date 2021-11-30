@@ -22,47 +22,11 @@ router.get('/', withAuth, async (req, res) => {
 
         res.render('dashboard', {
             ...user,
-            logged_in: true
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err)
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-router.get('/new', withAuth, (req, res) => {
-    res.render('new-post', { loggedIn: true })
-})
-
-router.get('/edit/:id', withAuth, (req, res) => {
-    Property.findOne({
-        where: { id: req.params.id },
-        attributes: ['id', 'property_content', 'title', 'created_at']
-    })
-        .then(dbPropertyData => {
-            if (!dbPropertyData) {
-                res.status(404).json({ message: 'No property found with this id' });
-                return;
-            }
-            const post = dbPropertyData.get({ plain: true });
-            res.render('edit-property', { property, loggedIn: true });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-})
 
 module.exports = router;

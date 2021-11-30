@@ -2,14 +2,6 @@ const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 const { Review, User, Property } = require('../../models');
 
-router.get('/', (req, res) => {
-    Review.findAll()
-        .then(dbReviewData => res.json(dbReviewData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
 
 router.post('/', withAuth, (req, res) => {
     if (req.session) {
@@ -125,7 +117,5 @@ router.put('/edit/:id', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 });
-
-
 
 module.exports = router;
