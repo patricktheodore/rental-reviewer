@@ -48,7 +48,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const reviewData = await Review.findByPk(req.params.id, {
             include: [
@@ -72,6 +72,58 @@ router.get('/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
+});
+
+router.get('/edit/:id', withAuth, async (req, res) => {
+    try {
+        const reviewData = await Review.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['name', 'id'],
+                },
+                {
+                    model: Property, 
+                    attributes: ['id', 'address'],
+                },
+            ],
+        });
+
+        const review = reviewData.get({ plain: true });
+
+        res.render('updateReview', {
+            ...review,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.put('/edit/:id', withAuth, (req, res) => {
+    Review.update(
+        {
+            description: req.body.description,
+            title: req.body.title,
+            rating: req.body.rating
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    )
+        .then(dbPostData => {
+            if (!dbPostData) {
+                res.status(404).json({ message: 'No post found with this id' });
+                return;
+            }
+            res.json(dbPostData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 
