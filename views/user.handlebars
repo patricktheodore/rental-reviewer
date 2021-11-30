@@ -1,0 +1,18 @@
+<h1>User: {{name}}</h1>
+
+            {{#if reviews.length}}
+<h4>Reviews:</h4>
+
+  {{#each reviews as |review|}}
+  <div class="col-10 post-card">
+    <div class="card">
+      <div class="card-header">
+          <h2>{{review.property.address}}</h2>
+        <h2><a href="/api/reviews/{{review.id}}">{{review.title}}</a> - Rating: {{review.rating}}/5</h2><span><a
+            href="api/users/{{review.user_id}}">{{review.user.name}}</a> - {{format_date review.created_at}}</span>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+
+{{/if}}

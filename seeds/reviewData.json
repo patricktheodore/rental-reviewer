@@ -1,7 +1,7 @@
 [
     {
       "title": "Horrible!",
-      "user_id": "1",
+      "user_id": 1,
       "property_id": 1,
       "rating": 1,
       "description": "As bad as it gets! Don't rent this property!"
@@ -9,15 +9,15 @@
     },
     {
       "title": "Fantastic",
-      "user_id": "2",
+      "user_id": 2,
       "property_id": 2,
       "rating": 5,
       "description": "Wowzers my dudes, 5/5!"
     },
     {
       "title": "Eh.",
-      "user_id": "3",
-      "property_id": "3",
+      "user_id": 3,
+      "property_id": 3,
       "rating": 3,
       "description": "sometimes maybe good, sometimes maybe shit."
     }

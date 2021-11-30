@@ -76,8 +76,8 @@
   <div class="col-10 post-card">
     <div class="card">
       <div class="card-header">
-        <h2><a href="/api/reviews/{{review.id}}">{{review.title}}</a> - Rating: {{review.rating}}/5</h2><span><a
-            href="/user/{{review.user_id}}">{{review.user.name}}</a> - {{format_date review.created_at}}</span>
+        <h2><a href="/api/reviews/{{review.id}}">{{review.title}}</a> - Rating: {{review.rating}}/5</h2><span>
+          <a href="/api/users/{{review.user_id}}">{{review.user.name}}</a> - {{format_date review.created_at}}</span>
       </div>
     </div>
   </div>

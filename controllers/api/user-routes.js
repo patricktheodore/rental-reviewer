@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Review, Property } = require('../../models');
+const withAuth = require('../../utils/auth');
+
 
 router.post('/login', async (req, res) => {
     try {
@@ -59,6 +61,35 @@ router.post('/login', async (req, res) => {
     }
   });
 
-  
+  router.get('/:id', withAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.params.id, {
+            attributes: { exclude: ['password'] },
+            include: [
+                {
+                    model: Review,
+                    attributes: ['title', 'description', 'rating', 'created_at'],
+                    include: [
+                      {
+                        model: Property,
+                        attributes: ['address'],
+                      },
+                    ],
+                },
+            ],
+        });
+
+        const user = userData.get({ plain: true });
+
+        // res.json(user);
+
+        res.render('user', {
+            ...user,
+            logged_in: true
+        });
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
 
 module.exports = router;

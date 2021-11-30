@@ -11,8 +11,8 @@
 {{#if reviews.length}}
 {{#each reviews as |review|}}
     <h5 class="card-subtitle mb-2 text-muted">Most Recent Reviews:</h6>
-    <p class="card-text"><a href="/user/{{review.user_id}}">{{review.user.name}}</a> - 
-    {{review.rating}}/5 - <a href="/review/{{review.id}}">{{review.title}}</a></p>
+    <p class="card-text"><a href="api/users/{{review.user_id}}">{{review.user.name}}</a> - 
+    {{review.rating}}/5 - <a href="api/reviews/{{review.id}}">{{review.title}}</a></p>
 </div>
 {{/each}}
 {{/if}}    

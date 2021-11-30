@@ -2,36 +2,6 @@ const router = require('express').Router();
 const withAuth = require('../../utils/auth')
 const { Property, User, Review } = require('../../models');
 
-// router.get('/', (req, res) => {
-//     Property.findAll({
-//         attributes: [
-//             'id',
-//             'property_content',
-//             'title',
-//             'created_at'
-//         ],
-//         order: [['created_at', 'DESC']],
-//         include: [
-//             {
-//                 model: Review,
-//                 attributes: ['id', 'review_text', 'post_id', 'user_id', 'created_at'],
-//                 include: {
-//                     model: User,
-//                     attributes: ['username']
-//                 }
-//             },
-//             {
-//                 model: User,
-//                 attributes: ['username']
-//             }
-//         ]
-//     })
-//         .then(dbPropertyData => res.json(dbPropertyData))
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
 
 router.get('/', async (req, res) => {
     try {
