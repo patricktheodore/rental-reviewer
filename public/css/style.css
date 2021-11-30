@@ -1,5 +1,5 @@
 :root {
-    --light: #FFFFFF;
+    --light: #e4e4e4;
     --primary: #c5c2c2;
     --secondary: #312e4b;
     --dark: #222222;
@@ -45,5 +45,37 @@ header,
 
 .fa-2x {
     color: var(--dark);
+}
+
+.form-input,
+.btn-primary {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: solid 1px var(--primary);
+    margin-top: 0.5rem;
+}
+
+.btn-primary {
+    margin-top: 1rem;
+}
+
+#signup-btn {
+    background-color: #42b72a;
+}
+
+.login-form,
+.signup-form {
+    background-color: white;
+    padding: 1rem 1rem 2rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+
+#dont-prompt {
+    margin: 4rem 0 2rem 0;
+}
+
+#githubFA {
+    margin-top: 10rem;
 }
 
