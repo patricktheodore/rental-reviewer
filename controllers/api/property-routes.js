@@ -2,86 +2,119 @@ const router = require('express').Router();
 const withAuth = require('../../utils/auth')
 const { Property, User, Review } = require('../../models');
 
-router.get('/', (req, res) => {
-    Property.findAll({
-        attributes: [
-            'id',
-            'property_content',
-            'title',
-            'created_at'
-        ],
-        order: [['created_at', 'DESC']],
-        include: [
-            {
-                model: Review,
-                attributes: ['id', 'review_text', 'post_id', 'user_id', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            },
-            {
-                model: User,
-                attributes: ['username']
-            }
-        ]
-    })
-        .then(dbPropertyData => res.json(dbPropertyData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
+// router.get('/', (req, res) => {
+//     Property.findAll({
+//         attributes: [
+//             'id',
+//             'property_content',
+//             'title',
+//             'created_at'
+//         ],
+//         order: [['created_at', 'DESC']],
+//         include: [
+//             {
+//                 model: Review,
+//                 attributes: ['id', 'review_text', 'post_id', 'user_id', 'created_at'],
+//                 include: {
+//                     model: User,
+//                     attributes: ['username']
+//                 }
+//             },
+//             {
+//                 model: User,
+//                 attributes: ['username']
+//             }
+//         ]
+//     })
+//         .then(dbPropertyData => res.json(dbPropertyData))
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// });
+
+router.get('/', async (req, res) => {
+    try {
+        const propertyData = await Property.findAll({
+            attributes: ['id', 'address'],
+            // order: [['created_at', 'DESC']],
+            include: [
+                {
+                    model: Review,
+                    attributes: ['id', 'title', 'rating', 'property_id', 'user_id', 'created_at', 'description'],
+                    include: {
+                        model: User,
+                        attributes: ['name']
+                    }
+                },
+            ],
         });
+
+        const properties = propertyData.map((property) => property.get({ plain: true }));
+
+        // res.json(properties)
+
+        res.render('propertiesList', {
+            properties,
+            loggein_in: req.session.loggin_in
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 });
 
-router.get('/:id', (req, res) => {
-    Property.findOne({
-        where: { id: req.params.id },
-        attributes: [
-            'id',
-            'property_content',
-            'title',
-            'created_at'
-        ],
-        include: [
-            {
-                model: Review,
-                attributes: ['id', 'review_text', 'property_id', 'user_id', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            },
-            {
-                model: User,
-                attributes: ['username']
-            }
-        ]
-    })
-        .then(dbPropertyData => {
-            if (!dbPropertyData) {
-                res.status(404).json({ message: 'No property found with this id' });
-                return;
-            }
-            res.json(dbPropertyData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
+
+
+
+// Working Get by ID
+router.get('/:id', async (req, res) => {
+    try {
+        const propertyData = await Property.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Review,
+                    attributes: ['id', 'title', 'rating', 'property_id', 'user_id', 'created_at', 'description'],
+                    include: {
+                        model: User,
+                        attributes: ['name']
+                    }
+                },
+            ]
         });
+
+        const property = propertyData.get({ plain: true });
+
+        res.render('property', {
+            ...property,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
-router.post('/', withAuth, (req, res) => {
-    Property.create({
-        title: req.body.title,
-        property_content: req.body.property_content,
-        user_id: req.session.user_id
-    })
-        .then(dbPropertyData => res.json(dbPropertyData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
+// working post
+router.post('/', withAuth, async (req, res) => {
+    try {
+        const newProperty = await Property.create({
+            ...req.body,
         });
+
+        res.status(200).json(newProperty);
+    } catch (err) {
+        res.status(400).json(err);
+    }
 });
+
+
+
+
+
+
+
+
+
 
 router.put('/:id', withAuth, (req, res) => {
     Property.update(

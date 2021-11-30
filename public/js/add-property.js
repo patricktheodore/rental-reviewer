@@ -1,20 +1,25 @@
-async function newFormHandler(event) {
+const newFormHandler = async (event) => {
     event.preventDefault();
-
-    const title = document.querySelector('input[name="property-title"]').value;
-    const property_content = document.querySelector('textarea[name="property-content"]').value;
-
-    const response = await fetch(`/api/property`, {
+  
+    const address = document.querySelector('#property-address').value.trim();
+  
+    if (address) {
+      const response = await fetch(`/api/property`, {
         method: 'POST',
-        body: JSON.stringify({ title, property_content }),
-        headers: { 'Content-Type': 'application/json' }
-    });
-
-    if (response.ok) {
-        document.location.replace('/dashboard');
-    } else {
-        alert(response.statusText);
+        body: JSON.stringify({ address }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Failed to create post');
+      }
     }
-}
+  };
 
-document.querySelector('.new-property-form').addEventListener('submit', newFormHandler);
+  document
+  .querySelector('.new-property-form')
+  .addEventListener('submit', newFormHandler);

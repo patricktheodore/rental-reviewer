@@ -6,20 +6,86 @@
   </div>
 </div>
 
-  {{#if reviews.length}}
-  <div class="col-sm-10 col-md-8 review-list">
-    <h3 id="review-header">Reviews:</h3>
+{{!-- add review button here. clicking will bring up form/modal --}}
 
-    {{#each reviews as |review|}}
-    <div class="col-10 post-card">
-      <div class="card">
-        <div class="card-header">
-          <h2><a href="/review/{{review.id}}">{{review.title}}</a> - Rating: {{review.rating}}/5</h2><span><a href="/user/{{review.user_id}}">{{review.user.name}}</a> - {{format_date review.created_at}}</span>
+{{#if logged_in}}
+<div class="col-12 comment-form">
+  <h3 class="card-title" id="comment-form-title">Add Review:</h3>
+  <form class="form new-post-form">
+    <div class="row">
+      <label for="staticAddress" class="col-sm-2 col-form-label">Address: <label>
+          <div class="col-sm-10">
+            <input type="text" readonly class="form-control-plaintext" id="staticAddress" value="{{address}}">
+          </div>
+    </div>
+    <div class="row mb-3">
+      <label for="formControlInput1" class="form-label">Title:</label>
+      <input type="input" class="form-control" id="reviewTitle" placeholder="Title.">
+    </div>
+    <div class="row mb-3">
+      <div class="col-12 ">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="reviewRating" id="rating1" value="1" checked>
+          <label class="form-check-label" for="rating1">
+            1/5
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="reviewRating" id="rating2" value="2">
+          <label class="form-check-label" for="rating2">
+            2/5
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="reviewRating" id="rating3" value="3">
+          <label class="form-check-label" for="rating3">
+            3/5
+          </label>
+          <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="reviewRating" id="rating4" value="4">
+          <label class="form-check-label" for="rating4">
+            4/5
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="reviewRating" id="rating5" value="5">
+          <label class="form-check-label" for="rating5">
+            5/5
+          </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group">
+          <label for="description" class="form-label">Review:</label>
+          <textarea class="form-control" id="reviewDescription" name="description" rows="5" placeholder="Review:"></textarea>
         </div>
       </div>
     </div>
-    {{/each}}
-  </div>
-  {{/if}}
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary" id="postBtn" data-id="{{id}}">Add</button>
+    </div>
+  </form>
+</div>
+{{/if}}
 
-  <a href="/review/{{review.id}}">{{review.title}}</a>
+{{#if reviews.length}}
+<div class="col-sm-10 col-md-8 review-list">
+  <h3 id="review-header">Reviews:</h3>
+
+  {{#each reviews as |review|}}
+  <div class="col-10 post-card">
+    <div class="card">
+      <div class="card-header">
+        <h2><a href="/review/{{review.id}}">{{review.title}}</a> - Rating: {{review.rating}}/5</h2><span><a
+            href="/user/{{review.user_id}}">{{review.user.name}}</a> - {{format_date review.created_at}}</span>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+{{/if}}
+
+{{#if logged_in}}
+<script src="/js/review.js"></script>
+{{/if}}

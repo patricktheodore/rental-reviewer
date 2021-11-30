@@ -1,0 +1,26 @@
+{{!-- sort by date created, link to property/:id --}}
+
+{{#each properties as |property| }}
+<div class="col-sm-12 col-md-10 property-card">
+    <div class="card">
+        <div class="card-header">
+            <a href="/api/property/{{property.id}}">{{property.address}}</a>
+        </div>
+        <div class="card-body">
+    <h5 class="card-title">Total Reviews: {{property.reviews.length}}</h5>
+{{#if reviews.length}}
+{{#each reviews as |review|}}
+    <h5 class="card-subtitle mb-2 text-muted">Most Recent Reviews:</h6>
+    <p class="card-text"><a href="/user/{{review.user_id}}">{{review.user.name}}</a> - 
+    {{review.rating}}/5 - <a href="/review/{{review.id}}">{{review.title}}</a></p>
+</div>
+{{/each}}
+{{/if}}    
+    </div>
+</div>
+{{/each}}
+
+
+{{!-- total reviews --}}
+{{!-- latest review --}}
+

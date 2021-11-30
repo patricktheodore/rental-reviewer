@@ -1,23 +1,33 @@
-async function reviewFormHandler(event) {
+const newReviewHandler = async (event) => {
     event.preventDefault();
+  
+    const property_id = event.target.getAttribute('data-id');
+    const title = document.querySelector('#reviewTitle').value.trim();
+    const rating = $('input[name=reviewRating]:checked').val();
+    const description = document.querySelector('#reviewDescription').value.trim();
 
-    const review_text = document.querySelector('textarea[name="review-body"]').value.trim();
-
-    const property_id = window.location.toString().split('/').pop();
-
-    if (review_text) {
-        const response = await fetch('/api/reviews', {
-            method: 'POST',
-            body: JSON.stringify({ property_id, review_text }),
-            headers: { 'Content-Type': 'application/json' }
-        });
-
-        if (response.ok) {
-            document.location.reload();
-        } else {
-            alert(response.statusText)
-        }
+    console.log(rating);
+    console.log(title);
+    console.log(description);
+    console.log(property_id);
+  
+    if (title && rating && description) {
+      const response = await fetch(`/api/reviews`, {
+        method: 'POST',
+        body: JSON.stringify({ title, rating, description, property_id }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (response.ok) {
+        document.location.reload();
+      } else {
+        alert('Failed to create post');
+      }
     }
-}
-
-document.querySelector('.review-form').addEventListener('submit', reviewFormHandler);
+  };
+  
+  document
+  .querySelector('#postBtn')
+  .addEventListener('click', newReviewHandler);

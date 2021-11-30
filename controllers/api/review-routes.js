@@ -11,20 +11,54 @@ router.get('/', (req, res) => {
         });
 });
 
+// router.post('/', withAuth, (req, res) => {
+//     if (req.session) {
+//         Review.create({
+//             review_text: req.body.review_text,
+//             post_id: req.body.post_id,
+//             user_id: req.session.user_id
+//         })
+//             .then(dbReviewData => res.json(dbReviewData))
+//             .catch(err => {
+//                 console.log(err);
+//                 res.status(400).json(err);
+//             });
+//     }
+// });
+
+// router.post('/', withAuth, async (req, res) => {
+//     try {
+//         const newReview = await Review.create({
+//             ...req.body,
+//             user_id: req.session.user_id,
+//         });
+
+//         res.status(200).json(newReview);
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// });
+
 router.post('/', withAuth, (req, res) => {
     if (req.session) {
         Review.create({
-            review_text: req.body.review_text,
-            post_id: req.body.post_id,
-            user_id: req.session.user_id
+            title: req.body.title,
+            rating: req.body.rating,
+            user_id: req.session.user_id,
+            description: req.body.description,
+            property_id: req.body.property_id
         })
-            .then(dbReviewData => res.json(dbReviewData))
+            .then(dbCommentData => res.json(dbCommentData))
             .catch(err => {
                 console.log(err);
                 res.status(400).json(err);
             });
     }
 });
+
+
+
+
 
 // router.delete('/:id', withAuth, (req, res) => {
 //     Review.destroy({
