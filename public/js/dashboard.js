@@ -30,10 +30,10 @@ const delButtonHandler = async (event) => {
     }};
 
 
-  document
-.querySelector('#editBtn')
-.addEventListener('click', editButtonHandler);
+document.querySelectorAll('#editBtn').forEach(btn => {
+  btn.addEventListener('click', editButtonHandler)
+});
 
-  document
-.querySelector('#delBtn')
-.addEventListener('click', delButtonHandler);
+document.querySelectorAll('#delBtn').forEach(btn => {
+  btn.addEventListener('click', delButtonHandler)
+});

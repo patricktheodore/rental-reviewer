@@ -1,13 +1,13 @@
 <div class="row text-center">
     <div class="col-12 text-center">
-        <h2 id="welcome">Hi {{name}}!</h2>
+        <h4 id="welcome">Hi {{name}}!</h4>
     </div>
 </div>
 
 <div class="row justify-content-md-center">
     <div class="col-sm-12 col-md-8 col-lg-6 text-center">
         <form class="form new-property-form">
-            <h4>Add New Property:</h4>
+            <h5>Add New Property:</h5>
             <div class="form-group">
                 <input class="form-input col-12" type="text" id="property-address" name="property-address"
                     placeholder="Address" />
@@ -21,19 +21,19 @@
 
 <div class="row justify-content-md-center">
     {{#if reviews.length}}
-    <div class="col-sm-10 col-lg-8 text-center property-list">
-        <h3 id="recent-property-header">Your Recent Reviews:</h3>
+        <h5 class="text-center" id="recent-property-header">Your Recent Reviews:</h5>
         {{#each reviews as |review|}}
+    <div class="col-sm-10 col-lg-8 text-center review-list">
         <div class="col-12 recent-review-card">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="text-start"><a
+                    <h5 class="text-start"><a
                             href="/api/property/{{review.property_id}}">{{review.property.address}}</a><span
                             class="text-muted"> - Reviewed {{format_date
-                            review.created_at}}</span></h4>
+                            review.created_at}}</span></h5>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title text-start">{{review.title}} - {{review.rating}}/5</h5>
+                    <h6 class="card-title text-start">{{review.title}} - {{review.rating}}/5</h6>
                     <p class="card-text text-muted text-start">{{review.description}}</p>
                 </div>
             </div>

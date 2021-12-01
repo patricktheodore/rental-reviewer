@@ -14,17 +14,21 @@ body {
 }
 
 header,
-.property-card {
+.property-card,
+.review-list,
+.property-list {
     margin-bottom: 2rem;
 }
 
-.custom-nav {
+.custom-nav,
+#logout {
     background-color: var(--dark);
 }
 
 .custom-link,
 .custom-brand,
-#burger-nav {
+#burger-nav,
+#logout {
     color: var(--light);
 }
 
@@ -33,7 +37,8 @@ header,
 }
 
 .custom-link:hover,
-.custom-brand:hover {
+.custom-brand:hover,
+#logout:hover {
     color: var(--primary);
     transform: translateY(-0.1rem);
     transition: transform 150ms;
@@ -78,7 +83,8 @@ header,
 }
 
 #dont-prompt,
-#recent-property-header {
+#recent-property-header,
+.custom-footer {
     margin: 4rem 0 2rem 0;
 }
 
@@ -88,10 +94,18 @@ header,
 }
 
 #githubFA {
-    margin-top: 10rem;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
 }
 .text-muted {
     font-size: 1rem;
     padding-left: 0.5rem;
+}
+
+#logout {
+    border: none;
+    box-shadow: none;
 }
 

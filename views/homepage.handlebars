@@ -1,11 +1,12 @@
 <div class="row justify-content-md-center">
-{{#each properties as |property| }}
-  <div class="col-sm-12 col-md-10 property-card">
+  {{#each properties as |property| }}
+  <div class="col-sm-12 col-lg-6 property-card">
     <div class="card">
       <div class="card-header">
-        <a href="/api/property/{{property.id}}">{{property.address}}</a><span id="reviewCount"> - {{property.reviews.length}} {{format_plural 'review' property.reviews.length}}</span>
+        <a href="/api/property/{{property.id}}">{{property.address}}</a><span id="reviewCount"> -
+          {{property.reviews.length}} {{format_plural 'review' property.reviews.length}}</span>
       </div>
     </div>
   </div>
-{{/each}}
+  {{/each}}
 </div>

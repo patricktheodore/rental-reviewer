@@ -5,23 +5,28 @@
     </div>
 </div>
 
-{{#each properties as |property| }}
 <div class="row justify-content-md-center">
-    <div class="col-sm-12 col-md-10 property-card">
-        <div class="card">
-            <div class="card-header">
-                <a href="/api/property/{{property.id}}">{{property.address}}</a><span> Total Reviews: {{property.reviews.length}}</span>
-            </div>
-            <div class="card-body">
+    {{#each properties as |property| }}
+    <div class="col-sm-10 col-lg-8 text-center property-list">
+        <div class="col-12 recent-review-card">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="text-start">{{property.address}}<span
+                            class="text-muted"> Total Reviews - {{property.reviews.length}}</span></h5>
+                </div>
                 {{#if reviews.length}}
-                <p class="card-subtitle mb-2">Most Recent Reviews</p>
-                    {{#each reviews as |review|}}
-                    <p class="card-text">{{review.user.name}} Rated:
-                        {{review.rating}}/5 - <a href="/api/reviews/{{review.id}}">{{review.title}}</a></p>
+                <div class="card-body">
+                    <h5 class="card-title text-start">{{reviews.0.user.name}}<span class="text-muted"> - Reviewed:
+                            {{format_date reviews.0.created_at}}</span></h5>
+                    <h6 class="card-subtitle text-start">{{reviews.0.title}} - {{reviews.0.rating}}/5 - <span
+                            class="text-muted">{{reviews.0.description}}</span></h6>
+        <button class="btn btn-sm btn-primary col-5 viewBtn" id="viewBtn" data-id="{{property.id}}">View More</button>
+                </div>
+                {{/if}}
             </div>
-            {{/each}}
-            {{/if}}
         </div>
     </div>
+    {{/each}}
 </div>
-{{/each}}
+
+<script src="/js/property.js"></script>
