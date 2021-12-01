@@ -72,7 +72,7 @@ router.post('/login', async (req, res) => {
                     include: [
                       {
                         model: Property,
-                        attributes: ['address'],
+                        attributes: ['address', 'id'],
                       },
                     ],
                 },

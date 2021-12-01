@@ -1,18 +1,32 @@
-<h1>User: {{name}}</h1>
 
-            {{#if reviews.length}}
-<h4>Reviews:</h4>
+<div class="row justify-content-md-center">
+  {{#if reviews.length}}
+  <div class="row text-center">
+    <div class="col-12">
+      <h4 id="reviewListHeader">{{name}}'s Recent Reviews: </h4>
+    </div>
+  </div>
+  {{#each reviews as |review| }}
+  <div class="col-sm-10 col-lg-8 text-center review-list">
+    <div class="col-12 recent-review-card">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="text-start">{{review.property.address}}<span
+              class="text-muted"> - {{format_date review.created_at}}</span></h5>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-start">{{review.title}}<span class="text-muted"> - {{review.rating}}/5</span></h5>
+          <h6 class="card-subtitle text-start">{{review.description}}</h6>
+          <button class="btn btn-sm btn-primary col-5 viewBtn" id="viewBtn" data-id="{{review.property.id}}">View
+            Property
 
-  {{#each reviews as |review|}}
-  <div class="col-10 post-card">
-    <div class="card">
-      <div class="card-header">
-          <h2>{{review.property.address}}</h2>
-        <h2><a href="/api/reviews/{{review.id}}">{{review.title}}</a> - Rating: {{review.rating}}/5</h2><span><a
-            href="api/users/{{review.user_id}}">{{review.user.name}}</a> - {{format_date review.created_at}}</span>
+            </button>
+        </div>
       </div>
     </div>
   </div>
   {{/each}}
+  {{/if}}
+</div>
 
-{{/if}}
+<script src="/js/property.js"></script>
