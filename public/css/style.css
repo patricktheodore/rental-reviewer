@@ -16,7 +16,9 @@ body {
 header,
 .property-card,
 .review-list,
-.property-list {
+.property-list,
+.review-form-header,
+.review-form-cont {
     margin-bottom: 2rem;
 }
 
@@ -55,7 +57,8 @@ header,
 .form-input,
 .btn-primary,
 #delBtn,
-#editBtn {
+#editBtn,
+.form-control {
     padding: 0.5rem;
     border-radius: 6px;
     border: solid 1px var(--primary);
@@ -64,7 +67,8 @@ header,
 
 .btn-primary,
 #delBtn,
-#editBtn {
+#editBtn,
+.review-form-header {
     margin-top: 1rem;
 }
 
@@ -75,7 +79,9 @@ header,
 .login-form,
 .signup-form,
 .new-property-form,
-.recent-review-card {
+.recent-review-card,
+.review-form-cont
+ {
     background-color: white;
     padding: 1rem 1rem 2rem 1rem;
     border-radius: 8px;
@@ -89,7 +95,8 @@ header,
 }
 
 #propertyListHeader,
-#welcome {
+#welcome,
+#reviewListHeader {
     margin: 1rem 0 2rem 0;
 }
 
