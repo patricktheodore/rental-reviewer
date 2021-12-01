@@ -5,9 +5,18 @@ async function logout() {
     });
 
     if (response.ok) {
+       await Swal.fire({
+            icon: 'success',
+            title: 'Logged Out!',
+            confirmButtonText: 'Bye.'
+        })
+
         document.location.replace('/');
     } else {
-        alert(response.statusText);
+        Swal.fire({
+            icon: 'error',
+            title: response.statusText
+        });
     }
 }
 

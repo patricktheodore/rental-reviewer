@@ -13,9 +13,22 @@ const newFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        Swal.fire({
+          icon: 'success',
+          title: `${address} Added!`,
+          text: 'Do you want to add a review to this property?',
+          showDenyButton: true,
+          confirmButtonText: 'Yes',
+          showDenyButtonText: 'No'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            document.location.replace('/');
+          }
+        })
+
+        
       } else {
-        alert('Failed to create post');
+        Swal.fire('Failed to create post', '', 'error');
       }
     }
   };
