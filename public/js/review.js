@@ -1,23 +1,56 @@
-async function reviewFormHandler(event) {
-    event.preventDefault();
+const newReviewHandler = async (event) => {
+  event.preventDefault();
 
-    const review_text = document.querySelector('textarea[name="review-body"]').value.trim();
+  const property_id = event.target.getAttribute('data-id');
+  const title = document.querySelector('#review-title').value.trim();
+  const rating = $('input[name=reviewRating]:checked').val();
+  const description = document.querySelector('#review-desc').value.trim();
 
-    const property_id = window.location.toString().split('/').pop();
+  if (!title) {
+    alert('Please Enter a Title for your Review')
+  };
 
-    if (review_text) {
-        const response = await fetch('/api/reviews', {
-            method: 'POST',
-            body: JSON.stringify({ property_id, review_text }),
-            headers: { 'Content-Type': 'application/json' }
-        });
+  if (!rating) {
+    alert('Please enter a rating for your review')
+  };
 
-        if (response.ok) {
-            document.location.reload();
-        } else {
-            alert(response.statusText)
+  if (!description) {
+    alert('Please give more details about your review.')
+  }
+
+  if (title && rating && description) {
+    const response = await fetch(`/api/reviews`, {
+      method: 'POST',
+      body: JSON.stringify({ title, rating, description, property_id }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      await Swal.fire({
+        icon: 'success',
+        title: `Review '${title}' Successfully Added!`,
+        confirmButtonText: 'Ok.'
+      });
+      document.location.reload();
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'You have already reviewed this property!',
+        text: 'You can view and edit reviews from your dashbaord.',
+        showDenyButton: true,
+        confirmButtonText: 'Take Me There',
+        denyButtonText: 'Sorry.'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          document.location.replace('/dashboard')
         }
+      });
     }
-}
+  }
+};
 
-document.querySelector('.review-form').addEventListener('submit', reviewFormHandler);
+document
+  .querySelector('#postBtn')
+  .addEventListener('click', newReviewHandler);

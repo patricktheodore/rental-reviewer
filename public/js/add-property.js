@@ -1,20 +1,38 @@
-async function newFormHandler(event) {
+const newFormHandler = async (event) => {
     event.preventDefault();
-
-    const title = document.querySelector('input[name="property-title"]').value;
-    const property_content = document.querySelector('textarea[name="property-content"]').value;
-
-    const response = await fetch(`/api/property`, {
+  
+    const address = document.querySelector('#property-address').value.trim();
+  
+    if (address) {
+      const response = await fetch(`/api/property`, {
         method: 'POST',
-        body: JSON.stringify({ title, property_content }),
-        headers: { 'Content-Type': 'application/json' }
-    });
+        body: JSON.stringify({ address }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (response.ok) {
+        Swal.fire({
+          icon: 'success',
+          title: `${address} Added!`,
+          text: 'Do you want to add a review to this property?',
+          showDenyButton: true,
+          confirmButtonText: 'Yes',
+          denyButtonText: 'No'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            document.location.replace('/');
+          }
+        })
 
-    if (response.ok) {
-        document.location.replace('/dashboard');
-    } else {
-        alert(response.statusText);
+        
+      } else {
+        Swal.fire('Failed to create post', '', 'error');
+      }
     }
-}
+  };
 
-document.querySelector('.new-property-form').addEventListener('submit', newFormHandler);
+  document
+  .querySelector('.new-property-form')
+  .addEventListener('submit', newFormHandler);
