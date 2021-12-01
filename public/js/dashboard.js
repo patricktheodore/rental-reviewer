@@ -7,6 +7,11 @@ const delButtonHandler = async (event) => {
       });
   
       if (response.ok) {
+        await Swal.fire({
+          icon: 'success',
+          title: 'Review Deleted!',
+          confirmButtonText: 'Ok.'
+      });
         document.location.replace('/dashboard');
       } else {
         alert('Failed to delete post');

@@ -15,7 +15,7 @@ async function logout() {
     } else {
         Swal.fire({
             icon: 'error',
-            title: response.statusText
+            title: 'You are already logged out!'
         });
     }
 }

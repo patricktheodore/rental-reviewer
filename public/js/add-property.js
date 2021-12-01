@@ -19,7 +19,7 @@ const newFormHandler = async (event) => {
           text: 'Do you want to add a review to this property?',
           showDenyButton: true,
           confirmButtonText: 'Yes',
-          showDenyButtonText: 'No'
+          denyButtonText: 'No'
         }).then((result) => {
           if (result.isConfirmed) {
             document.location.replace('/');
