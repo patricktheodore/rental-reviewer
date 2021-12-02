@@ -24,6 +24,10 @@
   <img alt="prettier" src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E" target="_blank" />
   <a href="#">
   <img alt="node js" src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" target="_blank" />
+  <a href="#">
+  <img alt="bootstrap" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" target="_blank" />  
+  <a href="#">
+  <img alt="fontawesome" src="https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white" target="_blank" />
   <br>
   <a href="#">
   <img alt="watchers" src="https://img.shields.io/github/watchers/patricktheodore/rental-reviewer?color=%2346b946&style=flat-square" target="_blank" />
