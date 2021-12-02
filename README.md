@@ -1,5 +1,5 @@
 
-<h1 align="center"> Rental Reviewer 🚩	
+<h1 align="center"> Renters Reviews 🚩	
 <br>(UWA Coding Bootcamp - Project 2/Group 2) </h1>
 <p align="center">
   <a href="#">
