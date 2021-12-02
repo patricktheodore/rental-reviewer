@@ -5,14 +5,14 @@ module.exports = {
     },
     format_plural: (word, amount) => amount !== 1 ? `${word}s` : word,
 
-    rating_average: property => {
+    rating_average: reviews => {
         let sum = 0;
         
-        for( var i = 0; i < property.reviews.length; i++ ){
-            sum += property.reviews[i].rating; 
+        for( var i = 0; i < reviews.length; i++ ){
+            sum += reviews[i].rating; 
         }
         
-        let avg = sum/property.reviews.length;
+        let avg = sum/reviews.length;
         return avg
     } 
 };
