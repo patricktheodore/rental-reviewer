@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     try {
         const propertyData = await Property.findAll({
             attributes: ['id', 'address'],
-            // order: [['created_at', 'DESC']],
+            order: [['created_at', 'DESC']],
             include: [
                 {
                     model: Review,
