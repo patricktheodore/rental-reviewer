@@ -20,6 +20,10 @@
   <img alt="css3" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" target="_blank" />
   <a href="#">
   <img alt="sweet alert2" src="https://img.shields.io/badge/Sweet_Alert2-9146FF?style=for-the-badge&logo=youtube-gaming&logoColor=white" target="_blank" />
+  <a href="#">
+  <img alt="prettier" src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E" target="_blank" />
+  <a href="#">
+  <img alt="node js" src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" target="_blank" />
   <br>
   <a href="#">
   <img alt="watchers" src="https://img.shields.io/github/watchers/patricktheodore/rental-reviewer?color=%2346b946&style=flat-square" target="_blank" />
@@ -108,8 +112,8 @@ Its done when the /review/ POST request allows the logged in user to add a revie
 # Mockup Page
 
 The following image shows the web application's appearance and functionality:
-
-"App gif img ~~~"
+    
+![rental-reviewer-image](https://user-images.githubusercontent.com/88220398/144440560-d3da161e-1eec-4ebb-967c-3cfc2d17a414.gif)
 
 # Installation
 `npm install`
@@ -121,7 +125,7 @@ Run the following command at the root of your project and answer the prompted qu
 
 `source db/schema.sql`
 
-`quit`
+`node seeds/seed.js`
 
 `npm start`
 
