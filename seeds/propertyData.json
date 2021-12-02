@@ -1,11 +1,32 @@
 [
-    {
-      "address": "1 Example Street West Perth 6005"
-    },
-    {
-      "address": "4 Test Avenue Perth 6000"
-    },
-    {
-      "address": "69 Racecar Place Cockburn 6969"
-    }
+  {
+    "address": "1 Example Street West Perth 6005"
+  },
+  {
+    "address": "4 Test Avenue Perth 6000"
+  },
+  {
+    "address": "69 Racecar Place Cockburn 6969"
+  },
+  {
+    "address": "21 Kangaroo Elbow Marangaroo 6064"
+  },
+  {
+    "address": "12A VicPark Road Willetton 6155"
+  },
+  {
+    "address": "33 London Court Rivervale 6103"
+  },
+  {
+    "address": "5 Aussie Place South Perth 6151"
+  },
+  {
+    "address": "29 Smoko Drive Northbridge 6003"
+  },
+  {
+    "address": "81 Roema Street Forrestfield 6058"
+  },
+  {
+    "address": "Bay House 4 - Aqua Resort Broadwater 6280"
+  }
 ]

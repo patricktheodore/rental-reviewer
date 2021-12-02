@@ -1,24 +1,72 @@
 [
-    {
-      "title": "Horrible!",
-      "user_id": 1,
-      "property_id": 1,
-      "rating": 1,
-      "description": "As bad as it gets! Don't rent this property!"
-
-    },
-    {
-      "title": "Fantastic",
-      "user_id": 2,
-      "property_id": 2,
-      "rating": 5,
-      "description": "Wowzers my dudes, 5/5!"
-    },
-    {
-      "title": "Eh.",
-      "user_id": 3,
-      "property_id": 3,
-      "rating": 3,
-      "description": "sometimes maybe good, sometimes maybe shit."
-    }
-  ]
+  {
+    "title": "Horrible!",
+    "user_id": 1,
+    "property_id": 1,
+    "rating": 1,
+    "description": "As bad as it gets! Don't rent this property!"
+  },
+  {
+    "title": "Fantastic",
+    "user_id": 2,
+    "property_id": 2,
+    "rating": 5,
+    "description": "Wowzers my dudes, 5/5!"
+  },
+  {
+    "title": "Eh.",
+    "user_id": 3,
+    "property_id": 3,
+    "rating": 3,
+    "description": "sometimes maybe good, sometimes maybe shit."
+  },
+  {
+    "title": "So bad!",
+    "user_id": 4,
+    "property_id": 4,
+    "rating": 1,
+    "description": "So many Kagaroes in the morning time!"
+  },
+  {
+    "title": "Fantastic 5",
+    "user_id": 5,
+    "property_id": 5,
+    "rating": 5,
+    "description": "Alcohol shop next door, deaming house."
+  },
+  {
+    "title": "Not too bad.",
+    "user_id": 1,
+    "property_id": 6,
+    "rating": 3,
+    "description": "Living room, kitchen are old and dark, except the garden is beautiful!"
+  },
+  {
+    "title": "Good",
+    "user_id": 2,
+    "property_id": 7,
+    "rating": 4,
+    "description": "Coffee Shop and Shopping centre are near by, but not too much chooses for restaurants."
+  },
+  {
+    "title": "So so",
+    "user_id": 3,
+    "property_id": 8,
+    "rating": 3,
+    "description": "too quite for young people, everything so tidy."
+  },
+  {
+    "title": "really bad!",
+    "user_id": 4,
+    "property_id": 9,
+    "rating": 1,
+    "description": "Noises place with full of birds singing all day!"
+  },
+  {
+    "title": "Wonderfull",
+    "user_id": 5,
+    "property_id": 10,
+    "rating": 4,
+    "description": "Nice view, good services, a abit pricey."
+  }
+]

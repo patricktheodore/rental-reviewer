@@ -1,17 +1,27 @@
 [
-    {
-      "name": "Patrick",
-      "email": "patrick@gmail.com",
-      "password": "password12345"
-    },
-    {
-      "name": "Adam",
-      "email": "adam@gmail.com",
-      "password": "password12345"
-    },
-    {
-      "name": "Steve",
-      "email": "steve0@gmail.com",
-      "password": "password12345"
-    }
-  ]
+  {
+    "name": "Patrick",
+    "email": "patrick@gmail.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Adam",
+    "email": "adam@gmail.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Steve",
+    "email": "steve@gmail.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Hasan",
+    "email": "thetufter@gmail.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Mark",
+    "email": "mark@gmail.com",
+    "password": "password12345"
+  }
+]
