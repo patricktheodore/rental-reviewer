@@ -90,12 +90,12 @@
     <div class="col-12 recent-review-card">
       <div class="card">
         <div class="card-header">
-          <h5 class="text-start"><a href="/api/users/{{review.user_id}}">{{review.user.name}}</a><span
-              class="text-muted"> - {{format_date review.created_at}}</span></h5>
+          <h5 class="text-start"><a href="/api/users/{{review.user_id}}">{{review.user.name}}</a><span class="text-muted"><i class="fas fa-star"></i>
+              {{review.rating}}/5</span></h5>
         </div>
         <div class="card-body">
-          <h5 class="card-title text-start">{{review.title}}<span class="text-muted"><i class="fas fa-star"></i>
-              {{review.rating}}/5</span></h5>
+          <h5 class="card-title text-start">{{review.title}}<span
+              class="text-muted"> - {{format_date review.created_at}}</span></h5>
           <h6 class="card-subtitle text-start">{{review.description}}</h6>
           {{!-- <button class="btn btn-sm btn-primary col-5 viewBtn" id="viewBtn" data-id="{{review.id}}">View
             More</button> --}}
