@@ -1,0 +1,51 @@
+<div class="row text-center">
+    <div class="col-12 text-center">
+        <h4 id="welcome">Hi {{name}}!</h4>
+    </div>
+</div>
+
+<div class="row justify-content-md-center">
+    <div class="col-sm-12 col-md-8 col-lg-6 text-center">
+        <form class="form new-property-form">
+            <h5>Add New Property:</h5>
+            <div class="form-group">
+                <input class="form-input col-12" type="text" id="property-address" name="property-address"
+                    placeholder="Address" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary col-12">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row justify-content-md-center">
+    {{#if reviews.length}}
+        <h5 class="text-center" id="recent-property-header">Your Recent Reviews:</h5>
+        {{#each reviews as |review|}}
+    <div class="col-sm-10 col-lg-8 text-center review-list">
+        <div class="col-12 recent-review-card">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="text-start"><a
+                            href="/api/property/{{review.property_id}}">{{review.property.address}}</a><span
+                            class="text-muted"> - Reviewed {{format_date
+                            review.created_at}}</span></h5>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title text-start">{{review.title}} - <span class="text-muted"><i class="fas fa-star"></i> {{review.rating}}/5</span></h6>
+                    <p class="card-text text-muted text-start">{{review.description}}</p>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-sm btn-primary col-5" id="editBtn" data-id="{{review.id}}" >Edit</button>
+        <button class="btn btn-sm btn-danger col-5" id="delBtn" data-id="{{review.id}}">Delete</button>
+    </div>
+    {{/each}}
+    {{/if}}
+</div>
+
+
+
+<script src="/js/dashboard.js"></script>
+<script src="/js/add-property.js"></script>

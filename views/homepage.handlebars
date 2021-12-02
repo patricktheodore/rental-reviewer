@@ -1,0 +1,25 @@
+<div class="row justify-content-md-center">
+  {{#each properties as |property| }}
+  <div class="col-sm-12 col-lg-4 text-center property-list">
+    <div class="col-12 recent-review-card">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="text-start">{{property.address}}</h5>
+        </div>
+        {{#if reviews.length}}
+        <div class="card-body">
+          <h6 class="card-title text-start">Average Rating - <span class="text-muted"> <i class="fas fa-star"></i>
+        {{rating_average property.reviews}} ({{property.reviews.length}} {{format_plural 'review' property.reviews.length}})</span></h6>
+          <h6 class="card-subtitle text-start">Last Reviewed - {{format_date reviews.0.created_at}}</h6>
+
+
+          <button class="btn btn-sm btn-primary col-5 viewBtn" id="viewBtn" data-id="{{property.id}}">View More</button>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+<script src="/js/property.js"></script>

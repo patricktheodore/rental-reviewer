@@ -37,11 +37,15 @@ Review.init(
     description: {
         type: DataTypes.TEXT,
         allowNull: true
-    }
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
   },
   {
     sequelize,
-    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'review',

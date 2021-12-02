@@ -1,0 +1,54 @@
+<div class="row justify-content-md-center">
+  <div class="col-sm-12 col-md-10 col-lg-8 text-center review-form-cont">
+    <h5 class="text-center review-form-header">Update Your Review For {{property.address}}</h5>
+    <form class="form review-form row justify-content-md-center align-items-center">
+      <div class="form-group col-sm-12 col-lg-6">
+        <input class="form-input col-12" type="text" id="reviewTitle" placeholder="{{title}}" />
+      </div>
+      <div class="form-group col-sm-12 col-lg-6 ">
+        {{!-- radio buttons here --}}
+        <div class="col-12">
+          <h6>Rating: </h6>
+          <div class="form-check form-check-inline col-auto">
+            <input class="form-check-input" type="radio" name="reviewRating" id="rating1" value="1">
+            <label class="form-check-label" for="rating1">
+              1/5
+            </label>
+          </div>
+          <div class="form-check form-check-inline col-auto">
+            <input class="form-check-input" type="radio" name="reviewRating" id="rating2" value="2">
+            <label class="form-check-label" for="rating2">
+              2/5
+            </label>
+          </div>
+          <div class="form-check form-check-inline col-auto">
+            <input class="form-check-input" type="radio" name="reviewRating" id="rating3" value="3">
+            <label class="form-check-label" for="rating3">
+              3/5
+            </label>
+          </div>
+          <div class="form-check form-check-inline col-auto">
+            <input class="form-check-input" type="radio" name="reviewRating" id="rating4" value="4">
+            <label class="form-check-label" for="rating4">
+              4/5
+            </label>
+          </div>
+          <div class="form-check form-check-inline col-auto">
+            <input class="form-check-input" type="radio" name="reviewRating" id="rating5" value="5">
+            <label class="form-check-label" for="rating5">
+              5/5
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea class="form-control col-12" id="review-desc" placeholder="{{description}}">{{description}}</textarea>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary col-8" id="postBtn" data-id="{{id}}" type="submit">Update!</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/updateReview.js"></script>

@@ -1,3 +1,4 @@
+
 <h1 align="center"> Rental Reviewer 🚩	
 <br>(UWA Coding Bootcamp - Project 2/Group 2) </h1>
 <p align="center">
@@ -148,3 +149,4 @@ This project is for private use and not looking for contributions at this time.
 - - -
 
 © 2021 Project 2 - Group 2(Patrick & Adam): Rental Reviewer
+
