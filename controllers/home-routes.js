@@ -5,7 +5,8 @@ router.get('/', (req, res) => {
     console.log(req.session);
 
     Property.findAll({
-        attributes: ['id','address'],
+        attributes: ['id', 'address'],
+        order: [['created_at', 'DESC']],
         include: [
             {
                 model: Review
@@ -13,8 +14,8 @@ router.get('/', (req, res) => {
         ]
     })
         .then(dbPropertyData => {
-            const properties = dbPropertyData.map((property) => 
-            property.get({ plain: true }));
+            const properties = dbPropertyData.map((property) =>
+                property.get({ plain: true }));
             res.render('homepage', {
                 properties,
                 logged_in: req.session.logged_in
@@ -33,7 +34,8 @@ router.get('/login', (req, res) => {
     }
 
     res.render('login', {
-    logged_in: req.session.logged_in});
+        logged_in: req.session.logged_in
+    });
 
 });
 

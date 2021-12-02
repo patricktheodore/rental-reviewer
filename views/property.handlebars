@@ -60,6 +60,20 @@
     </form>
   </div>
 </div>
+{{!-- else login to add review! --}}
+{{else}}
+
+
+<div class="row justify-content-md-center">
+  <div class="col-sm-12 col-md-8 col-lg-4 text-center">
+    <form class="form login-form">
+      <h4>Login or Sign Up To Review!</h4>
+      <div class="form-group">
+        <a href="/login" class="btn btn-primary">Login / Sign Up</a>
+      </div>
+    </form>
+  </div>
+</div>
 {{/if}}
 
 
@@ -80,7 +94,8 @@
               class="text-muted"> - {{format_date review.created_at}}</span></h5>
         </div>
         <div class="card-body">
-          <h5 class="card-title text-start">{{review.title}}<span class="text-muted"><i class="fas fa-star"></i> {{review.rating}}/5</span></h5>
+          <h5 class="card-title text-start">{{review.title}}<span class="text-muted"><i class="fas fa-star"></i>
+              {{review.rating}}/5</span></h5>
           <h6 class="card-subtitle text-start">{{review.description}}</h6>
           {{!-- <button class="btn btn-sm btn-primary col-5 viewBtn" id="viewBtn" data-id="{{review.id}}">View
             More</button> --}}

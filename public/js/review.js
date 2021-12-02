@@ -7,15 +7,24 @@ const newReviewHandler = async (event) => {
   const description = document.querySelector('#review-desc').value.trim();
 
   if (!title) {
-    alert('Please Enter a Title for your Review')
+    Swal.fire({
+      icon: 'error',
+      title: 'Please Enter a Title for your Review'
+    });
   };
 
   if (!rating) {
-    alert('Please enter a rating for your review')
+    Swal.fire({
+      icon: 'error',
+      title: 'Please Enter a Rating for your Review'
+    });
   };
 
   if (!description) {
-    alert('Please give more details about your review.')
+    Swal.fire({
+      icon: 'error',
+      title: 'Please Provide More details about your Review.'
+    });
   }
 
   if (title && rating && description) {
@@ -51,6 +60,14 @@ const newReviewHandler = async (event) => {
   }
 };
 
+const toLoginHandler = async (event) => {
+      document.location.replace(`/api/users/login`)
+  };
+
 document
   .querySelector('#postBtn')
   .addEventListener('click', newReviewHandler);
+
+  document
+  .querySelector('#toLoginBtn')
+  .addEventListener('click', toLoginHandler);
