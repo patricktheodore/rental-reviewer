@@ -12,10 +12,12 @@
         {{rating_average property.reviews}} ({{property.reviews.length}} {{format_plural 'review' property.reviews.length}})</span></h6>
           <h6 class="card-subtitle text-start">Last Reviewed - {{format_date reviews.0.created_at}}</h6>
 
-
-          <button class="btn btn-sm btn-primary col-5 viewBtn" id="viewBtn" data-id="{{property.id}}">View More</button>
         </div>
         {{/if}}
+        <div class="card-text text-center">
+          <button class="btn btn-sm btn-primary col-5 viewBtn" id="viewMoreBtn" data-id="{{property.id}}">View More</button>
+
+        </div>
       </div>
     </div>
   </div>
