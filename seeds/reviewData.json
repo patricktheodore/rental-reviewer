@@ -4,35 +4,42 @@
     "user_id": 1,
     "property_id": 1,
     "rating": 1,
-    "description": "As bad as it gets! Don't rent this property!"
+    "description": "The apartment is in a great location- close to a supermarket and restaurants and walking distance to the city. Strolling on the river behind the building is especially lovely- a great place to stay."
+  },
+  {
+    "title": "Super Fantastic!",
+    "user_id": 1,
+    "property_id": 4,
+    "rating": 5,
+    "description": "We were going to stay at Perth for 21st birthday and were unable to do to Covid restrictions. We were told to contact Airbnb by the host and they told us that our host wouldn’t give us any money back because we didn’t cancel through Airbnb even though we weren’t told to do that. Very unhappy that I couldn’t get any money back as I am a university student and can’t afford to pay for places that I can’t stay at when it’s out of my control"
   },
   {
     "title": "Fantastic",
     "user_id": 2,
     "property_id": 2,
     "rating": 5,
-    "description": "Wowzers my dudes, 5/5!"
+    "description": "Wonderful location and apartment with plenty of nearby food and entertainment options. The proximity to the CAT bus is also a big bonus. Highly recommended!"
   },
   {
     "title": "Eh.",
     "user_id": 3,
     "property_id": 3,
     "rating": 3,
-    "description": "sometimes maybe good, sometimes maybe shit."
+    "description": "The location was great, easy communication with Rose as well. When checking in her husband was waiting for us to show us around which was very nice. The apartment looks much better on the photos but for the value and location it's worth it"
   },
   {
     "title": "So bad!",
     "user_id": 4,
     "property_id": 4,
     "rating": 1,
-    "description": "So many Kagaroes in the morning time!"
+    "description": "Great place in a very nice location. Close to nice restaurants, IGA and by the river (beautiful walk track). Super comfy with a pretty good shower! I had a great time!"
   },
   {
     "title": "Fantastic 5",
     "user_id": 5,
     "property_id": 5,
     "rating": 5,
-    "description": "Alcohol shop next door, deaming house."
+    "description": "Great location close to beautiful swan river, Optus stadium and nice cafes and just 5 min in yellow cat (free bus) to the heart of Perth CBD! Rose was also very helpful and made our stay pleasant!"
   },
   {
     "title": "Not too bad.",
@@ -53,20 +60,97 @@
     "user_id": 3,
     "property_id": 8,
     "rating": 3,
-    "description": "too quite for young people, everything so tidy."
+    "description": "Cute little apartment. Very central and easy to access the busy city strip via public transport. Hosts were friendly and willing to assist every opportunity."
   },
   {
     "title": "really bad!",
     "user_id": 4,
     "property_id": 9,
     "rating": 1,
-    "description": "Noises place with full of birds singing all day!"
+    "description": "Rose and Michael provide an apartment in a great location. Victoria Park is close-by with some stunning riverside walks. We highly recommend 'Gioia on the River' for beautiful Italian food, outstanding service and a gorgeous location. Kinky Lizard is a great cafe for breakfast. We would stay here again."
   },
   {
     "title": "Wonderfull",
     "user_id": 5,
     "property_id": 10,
     "rating": 4,
-    "description": "Nice view, good services, a abit pricey."
+    "description": "Amazing place, coffee shop and restaurants at your doorstep and central to everything. Will definitely be staying here again when in Perth"
+  },
+  {
+    "title": "Lovely place. Perfect location.",
+    "user_id": 2,
+    "property_id": 1,
+    "rating": 5,
+    "description": "Cute little apartment located walking distance from cafes and the river. Beautiful circle window overlooking a lush tree and if you open the window you can smell the aromas of breakfast and coffee!! Small space with personal touches, very clean and friendly hosts."
+  },
+  {
+    "title": "Beautiful place",
+    "user_id": 4,
+    "property_id": 10,
+    "rating": 5,
+    "description": "Fantastic neat and tidy little apartment with everything you need. Great location with so many delicious meal options nearby. Cat bus was very handy and very accessible. Highly recommend and would stay again."
+  },
+  {
+    "title": "Great location and Rose is super helpful!",
+    "user_id": 5,
+    "property_id": 3,
+    "rating": 3,
+    "description": "very basic, just like a small hotel room, I was disappointed as I thought I was staying in an 'apartment'."
+  },
+  {
+    "title": "Perfect for what we needed.",
+    "user_id": 2,
+    "property_id": 7,
+    "rating": 4,
+    "description": "Rose’s apartment is in a brilliant location. Very quiet and secure. Great value. Look forward to staying again. Rose is a lovely host, answers all communication promptly and explains everything you need to know on arrival."
+  },
+  {
+    "title": "Great area and apartment!",
+    "user_id": 3,
+    "property_id": 8,
+    "rating": 4,
+    "description": "Excellent location, great space for a short trip! Great value for a quick stay! Shower is a bit tricky to operate but the small bathroom is fine if you don’t mind compromising for the beautiful location!"
+  },
+  {
+    "title": "Great location! clean open room. Will stay again.",
+    "user_id": 3,
+    "property_id": 9,
+    "rating": 2,
+    "description": "This studio is so cute, and in such an easy area to access all of sydney cbd and outter sydney suburbs. The studio is very clean and comfortable with everything you could need, for a great stay."
+  },
+  {
+    "title": "Wonderful place, super convenient and clean.",
+    "user_id": 5,
+    "property_id": 10,
+    "rating": 5,
+    "description": "Perfect little place for a visit to Sydney. Compact but well utilised space - everything I needed for my 2 nights. Thanks Agustina!"
+  },
+  {
+    "title": "Would rather eat my own hand then stay here",
+    "user_id": 5,
+    "property_id": 1,
+    "rating": 5,
+    "description": "But thats because my hand is large double quater pounder meal. This place is great."
+  },
+  {
+    "title": "Faultless",
+    "user_id": 1,
+    "property_id": 2,
+    "rating": 1,
+    "description": "The only thing that was slightly wrong was the dead person in the kitchen that was leaving a bit of a smell. Apart from that, everything was fantasic. Loved every second of living here."
+  },
+  {
+    "title": "Very Average Place",
+    "user_id": 4,
+    "property_id": 6,
+    "rating": 2,
+    "description": "So average. I was greeted with cocktails. I don't like mojitos. Like honestly, who would even think that's a good idea. I am clearly an expresso martini girl. I won't be coming back, and the complimentary breakfast. We didn't ask for this! They just cook you breakfast, like ARE YOU TRYING TO CALL MY SKINNY OMG! We left after 6 months because the owners were trying to give us 1 months rent for free during COVID. Do I look like a charity case to you? I'll have you know I work at supre! I don't need your handouts. The only saving grace for this property was the tradies next door. Love some free entertainment. "
+  },
+  {
+    "title": "So good it hurts",
+    "user_id": 1,
+    "property_id": 4,
+    "rating": 5,
+    "description": "If I could dream an apartment, It would look like this."
   }
 ]
