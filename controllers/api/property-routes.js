@@ -23,6 +23,9 @@ router.get('/', async (req, res) => {
         const properties = propertyData.map((property) => property.get({ plain: true }));
 
 
+    console.log(properties[0].reviews);
+
+
         res.render('propertiesList', {
             properties,
             logged_in: req.session.logged_in

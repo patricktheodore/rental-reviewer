@@ -1,6 +1,8 @@
 <div class="row text-center">
-  <div class="col-12">
-    <h4 id="propertyListHeader">{{address}}</h4>
+  <div class="col-12" id="propertyListHeader">
+    <h4>{{address}}</h4>
+    <h5><span class="text-muted"> <i class="fas fa-star"></i>
+        {{rating_average reviews}} ({{reviews.length}} {{format_plural 'review' reviews.length}})</span></h5>
   </div>
 </div>
 
@@ -8,7 +10,7 @@
 {{#if logged_in}}
 <div class="row justify-content-md-center">
   <div class="col-sm-12 col-md-10 col-lg-8 text-center review-form-cont">
-<h5 class="text-center review-form-header">Leave a Review:</h5>
+    <h5 class="text-center review-form-header">Leave a Review:</h5>
     <form class="form review-form row justify-content-md-center align-items-center">
       <div class="form-group col-sm-12 col-lg-6">
         <input class="form-input col-12" type="text" id="review-title" placeholder="Title" />
@@ -78,7 +80,7 @@
               class="text-muted"> - {{format_date review.created_at}}</span></h5>
         </div>
         <div class="card-body">
-          <h5 class="card-title text-start">{{review.title}}<span class="text-muted"> - {{review.rating}}/5</span></h5>
+          <h5 class="card-title text-start">{{review.title}}<span class="text-muted"><i class="fas fa-star"></i> {{review.rating}}/5</span></h5>
           <h6 class="card-subtitle text-start">{{review.description}}</h6>
           {{!-- <button class="btn btn-sm btn-primary col-5 viewBtn" id="viewBtn" data-id="{{review.id}}">View
             More</button> --}}

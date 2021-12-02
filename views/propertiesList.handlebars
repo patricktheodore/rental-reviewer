@@ -11,16 +11,17 @@
         <div class="col-12 recent-review-card">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="text-start">{{property.address}}<span
-                            class="text-muted"> <i class="fas fa-star"></i> Total Reviews - {{property.reviews.length}}</span></h5>
+                    <h5 class="text-start">{{property.address}}<span class="text-muted"> <i class="fas fa-star"></i>
+                            {{rating_average property.reviews}} ({{property.reviews.length}} {{format_plural 'review' property.reviews.length}})</span></h5>
                 </div>
                 {{#if reviews.length}}
                 <div class="card-body">
                     <h5 class="card-title text-start">{{reviews.0.user.name}}<span class="text-muted"> - Reviewed:
                             {{format_date reviews.0.created_at}}</span></h5>
-                    <h6 class="card-subtitle text-start">{{reviews.0.title}} - {{reviews.0.rating}}/5 - <span
+                    <h6 class="card-subtitle text-start">{{reviews.0.title}} - <span class="text-muted"><i class="fas fa-star"></i> {{reviews.0.rating}}/5</span> - <span
                             class="text-muted">{{reviews.0.description}}</span></h6>
-        <button class="btn btn-sm btn-primary col-5 viewBtn" id="viewBtn" data-id="{{property.id}}">View More</button>
+                    <button class="btn btn-sm btn-primary col-5 viewBtn" id="viewBtn" data-id="{{property.id}}">View
+                        More</button>
                 </div>
                 {{/if}}
             </div>

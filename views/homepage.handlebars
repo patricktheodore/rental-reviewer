@@ -8,11 +8,11 @@
         </div>
         {{#if reviews.length}}
         <div class="card-body">
-          
-          <h6 class="card-title text-start">Total Reviews - {{property.reviews.length}}</h6>
-        <h6 class="card-subtitle text-start">Last Reviewed - {{format_date reviews.0.created_at}}</h6>
+          <h6 class="card-title text-start">Average Rating - <span class="text-muted"> <i class="fas fa-star"></i>
+        {{rating_average property.reviews}} ({{property.reviews.length}} {{format_plural 'review' property.reviews.length}})</span></h6>
+          <h6 class="card-subtitle text-start">Last Reviewed - {{format_date reviews.0.created_at}}</h6>
 
-          
+
           <button class="btn btn-sm btn-primary col-5 viewBtn" id="viewBtn" data-id="{{property.id}}">View More</button>
         </div>
         {{/if}}
