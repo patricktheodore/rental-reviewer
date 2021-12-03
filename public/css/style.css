@@ -124,3 +124,11 @@ header,
     margin: 1rem 0 1rem 0;
 }
 
+#searchBar {
+margin: 0 2rem 0 1rem;
+}
+
+.custom-toggler {
+    margin-right: 1.5rem;
+}
+
