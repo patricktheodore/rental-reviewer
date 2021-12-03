@@ -1,5 +1,5 @@
 
-<h1 align="center"> Renters Reviews 🚩	
+<h1 align="center"> Renters Reviews
 <br>(UWA Coding Bootcamp - Project 2/Group 2) </h1>
 <p align="center">
   <a href="#">
@@ -58,7 +58,7 @@
       <a href="https://github.com/patricktheodore/rental-reviewer"><strong>Explore the docs »</strong></a>
       <br />
       <br />
-      <a href="#">View Demo</a>
+      <a href="https://rocky-cove-88046.herokuapp.com/">View Demo</a>
       ·
       <a href="https://github.com/patricktheodore/rental-reviewer/issues">Report Bug</a>
       ·
@@ -120,10 +120,24 @@ The following image shows the web application's appearance and functionality:
 ![rental-reviewer-image](https://user-images.githubusercontent.com/88220398/144440560-d3da161e-1eec-4ebb-967c-3cfc2d17a414.gif)
 
 # Installation
+
+`fork the repo`
+
+`git clone to local`
+
 `npm install`
+
 
 # Usage
 Run the following command at the root of your project and answer the prompted questions:
+
+`--WITH LIVE HEROKU DEPLOYMENT--`
+
+`login or create account on heroku deployment`
+
+`-------OR--------`
+
+`--FROM LOCAL--`
 
 `mysql -u root -p`
 
@@ -133,7 +147,7 @@ Run the following command at the root of your project and answer the prompted qu
 
 `npm start`
 
-# Contributor
+# Contributors
 <a href="https://github.com/patricktheodore/rental-reviewer">
   <img alt="contributor" src="https://contrib.rocks/image?repo=patricktheodore/rental-reviewer" target="_blank" />
   </a>
@@ -145,13 +159,12 @@ This project is for private use and not looking for contributions at this time.
   Distributed under the MIT. Please see for https://opensource.org/licenses/MIT more details.
 
   # Questions & Contact Info
-  Find more our works at Github:
+  Find more of our works at Github:
   [Patrick Theodore](https://github.com/patricktheodore) and
   [Adam Pham](https://github.com/ThiHoangPham)
     </br>
   Get in contact via email: patricktheodoresara@gmail.com or thaihoangpham2008@gmail.com
   </br></br>
-  Our preferred method of communication is: Email.
   <p align ="right"><a href="#">↥ back to top</a></p>
 
 - - -
