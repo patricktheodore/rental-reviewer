@@ -102,21 +102,21 @@ router.put('/:id', withAuth, (req, res) => {
         });
 });
 
-router.delete('/:id', withAuth, (req, res) => {
-    Property.destroy({
-        where: { id: req.params.id }
-    })
-        .then(dbPropertyData => {
-            if (!dbPropertyData) {
-                res.status(404).json({ message: 'No property found with this id' });
-                return;
-            }
-            res.json(dbPropertyData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+// router.delete('/:id', withAuth, (req, res) => {
+//     Property.destroy({
+//         where: { id: req.params.id }
+//     })
+//         .then(dbPropertyData => {
+//             if (!dbPropertyData) {
+//                 res.status(404).json({ message: 'No property found with this id' });
+//                 return;
+//             }
+//             res.json(dbPropertyData);
+//         })
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// });
 
 module.exports = router;

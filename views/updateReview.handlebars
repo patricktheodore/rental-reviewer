@@ -3,7 +3,7 @@
     <h5 class="text-center review-form-header">Update Your Review For {{property.address}}</h5>
     <form class="form review-form row justify-content-md-center align-items-center">
       <div class="form-group col-sm-12 col-lg-6">
-        <input class="form-input col-12" type="text" id="reviewTitle" placeholder="{{title}}" />
+        <input class="form-input col-12" type="text" id="reviewTitle" placeholder="{{title}}" maxlength="50"/>
       </div>
       <div class="form-group col-sm-12 col-lg-6 ">
         {{!-- radio buttons here --}}
@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="form-group">
-        <textarea class="form-control col-12" id="review-desc" placeholder="{{description}}">{{description}}</textarea>
+        <textarea class="form-control col-12" id="review-desc" placeholder="{{description}}" maxlength="250">{{description}}</textarea>
       </div>
       <div class="form-group">
         <button class="btn btn-primary col-8" id="postBtn" data-id="{{id}}" type="submit">Update!</button>

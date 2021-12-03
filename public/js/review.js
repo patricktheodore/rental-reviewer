@@ -61,13 +61,30 @@ const newReviewHandler = async (event) => {
 };
 
 const toLoginHandler = async (event) => {
-      document.location.replace(`/api/users/login`)
-  };
+  document.location.replace(`/api/users/login`)
+};
 
 document
   .querySelector('#postBtn')
   .addEventListener('click', newReviewHandler);
 
-  document
+document
   .querySelector('#toLoginBtn')
   .addEventListener('click', toLoginHandler);
+
+var textarea = document.querySelector("textarea");
+
+textarea.addEventListener("input", function () {
+  var maxlength = this.getAttribute("maxlength");
+  var currentLength = this.value.length;
+
+  if (currentLength >= maxlength) {
+    Swal.fire({
+      icon: 'error',
+      title: 'You Have excedeed the 250 Character Limit!'
+    });
+  } else {
+
+    console.log(maxlength - currentLength + " chars left");
+  }
+});
