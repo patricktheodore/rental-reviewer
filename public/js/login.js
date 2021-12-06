@@ -68,7 +68,7 @@ const signupFormHandler = async (event) => {
             await Swal.fire({
                 icon: 'success',
                 title: `Welcome ${name}`,
-                text: 'Start by either adding a review or browsing properties already reviews by other users.',
+                text: 'Start by either adding a review or browsing properties already reviewed by other users.',
                 confirmButtonText: 'Thanks',
             })
             document.location.replace('/dashboard');
